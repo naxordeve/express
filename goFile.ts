@@ -14,7 +14,7 @@ async function getBestServer(): Promise<string> {
 export async function ToGoFile(filePath: string): Promise<string> {
     const { apiKey } = goAccount;
     if (!apiKey) {
-    throw new Error('GoFile API Key is missing');}
+    throw new Error('API Key is missing');}
     const server = await getBestServer();
     const formData = new FormData();
     formData.append('file', fs.createReadStream(filePath));
