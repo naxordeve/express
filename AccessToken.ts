@@ -1,8 +1,8 @@
 import axios from 'axios';
-import goFileAccount from './accounts';
+import goAccount from './accounts';
 
 export async function getAccountInfo() {
-    const { accountId, apiKey } = goFileAccount;
+    const { accountId, apiKey } = goAccount;
     const voidi = await axios.get(
         `https://api.gofile.io/accounts/${accountId}`,
         {
@@ -17,7 +17,7 @@ export async function getAccountInfo() {
 }
 
 export async function resetGoToken() {
-    const { accountId, apiKey } = goFileAccount;
+    const { accountId, apiKey } = goAccount;
     const voidi = await axios.post(
         `https://api.gofile.io/accounts/${accountId}/resettoken`,
         {},
