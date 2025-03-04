@@ -19,6 +19,9 @@ let session: WASocket | null = null;
 const msgRetryCounterCache = new NodeCache();
 let isPairing = false;
 app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+});
 async function createSessionDir() {
     const sessionDir = './session';
     if (!fs.existsSync(sessionDir)) {
