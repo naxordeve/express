@@ -41,6 +41,8 @@ async function initialize() {
         printQRInTerminal: false,
         logger: pino({ level: 'silent' }).child({ level: 'silent' }),
         browser: Browsers.macOS("Safari"),
+        downloadHistory: false,
+        syncFullHistory: false,
         markOnlineOnConnect: true,
         msgRetryCounterCache
     });
